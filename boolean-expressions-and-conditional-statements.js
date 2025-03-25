@@ -50,3 +50,33 @@ Add Customization and expand the game:
   - Use nested conditionals and logical operators to create complex outcomes.
 
 */
+
+const hasSword = true;
+const hasShield = false;
+const hasMoney = false;
+
+console.log("You are walking down a path and lemonade stand. He asks you if you would like to buy some.");
+const choice2 = readline.question("Do you buy some?");
+
+if (choice2 === "yes" && hasMoney){
+  console.log("You drink some delicious lemonade!")
+} else if (choice2 === "yes" && !hasMoney){
+  console.log("Scram")
+}else {
+  console.log("ok Have a nice day")
+}
+
+console.log("A black knight approaches you and challenges you to a duel.");
+const choice3 = readline.question("Do you accept?");
+
+if (choice3 === "yes" && hasSword && hasShield){
+  console.log("You block the knights attacks and stab him through the heart.")
+} else if (choice3 === "yes" && (hasSword || hasShield)){
+  console.log("You fight valiantly until you are both exhausted. YOou shake the knights hand and go your seperate ways.")
+}else if ("no"){
+  console.log("The knight scoffs at you and rides away.")
+}else if ((choice3 === "yes" && !(hasSword || hasShield))){
+  console.log("The knight slays you and you are left to bleed out.")
+} else {
+  console.log("you run away.")
+}
